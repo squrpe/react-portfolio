@@ -40,8 +40,15 @@ export default function Portfolio() {
       ]);
 
     return (<div>
+
+        <h2 className='portfolioHeading'>
+        My Portfolio
+        </h2>
+
+        <div className="cards">
         {projects.map((project) => (
             <Project project={project}/>
         ))}
+        </div>
     </div>)
 }

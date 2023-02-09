@@ -27,7 +27,7 @@ export default function Contacts() {
 
         } else {
             if (!event.target.value.length) {
-                setErrorMessage(`${event.target.name} is required.`);
+                setErrorMessage(`A ${event.target.name} is required!`);
             } else {
                 setErrorMessage('');
             }
@@ -41,19 +41,21 @@ export default function Contacts() {
     }
 
     return (
-        <form className="contact-form">
-            Name: <input name="name" defaultValue={formState.name} onBlur={handleChange}></input>
+        <form className="contactForm">
+            <legend>Contact Me</legend>
 
-            Email: <input name="email" defaultValue={formState.email} onBlur={handleChange}></input>
+            <div className='formItem'>Name: <input name="name" defaultValue={formState.name} onBlur={handleChange}></input></div>
 
-            Your Message: <textarea type="text" name="message" rows="2" className="form-control md-textarea" defaultValue={formState.message} onBlur={handleChange}></textarea>
+            <div className='formItem'>Email: <input name="email" defaultValue={formState.email} onBlur={handleChange}></input></div>
+
+            <div className='formItem'>Your Message: <textarea type="text" name="message" rows="2" className="form-control md-textarea" defaultValue={formState.message} onBlur={handleChange}></textarea></div>
             {/* <input name="message" defaultValue={formState.message} onBlur={handleChange}></input> */}
 
-            {errorMessage && (<div>
+            {errorMessage && (<div className='error'>
                 {errorMessage}
             </div>)}
 
-            <button type="submit" onSubmit={handleSubmit}>Submit</button>
+            <div className='formItem'><button type="submit" onSubmit={handleSubmit}>Submit</button></div>
         </form>
 
     )

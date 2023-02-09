@@ -2,13 +2,14 @@ import React from 'react';
 import resume from '../utils/resume.pdf'
 
 export default function Resume() {
-    return (<div>
+    return (<div className='resumeDiv'>
+        <div className='resumeContent'>
         <h3>Resume</h3>
 
-        <p></p>
+        <p>My name's Lara, and I am an aspiring Software Engineer.</p>
 
         <h4>My Skills:</h4>
-        <ul>
+
             <li>HTML5</li>
             <li>CSS</li>
             <li>JavaScript</li>
@@ -19,7 +20,8 @@ export default function Resume() {
             <li>MongoDB</li>
             <li>Mongoose</li>
             <li>Object Oriented Programming</li>
-        </ul>
+
+        </div>
 
         <a href={resume} download="Lara Grocke Resume">
             <button>Download Resume</button>
